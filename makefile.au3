@@ -8,7 +8,7 @@ Const $UPX_STANDALONE = '"C:\Program Files (x86)\AutoIt3\Aut2Exe\upx.exe"'
 Const $AUTOIT_COMPILER = '"C:\Program Files (x86)\AutoIt3\Aut2Exe\Aut2exe.exe"'
 Const $GCC_COMPILER = '"C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\g++.exe"'
 
-Const $COMPRESS = FALSE, $COMPILAR = True
+Const $COMPRESS = True, $COMPILAR = True
 
 ;Compilar los binarios
 If $COMPILAR Then
