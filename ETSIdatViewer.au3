@@ -11,13 +11,12 @@
 #include <StaticConstants.au3>
 #include "UDF\_ArrayUtils.au3"
 
-;Local $cmdLine = [1, "test"]
-If $cmdLine[0] <> 1 Then
+
+If Not $CmdLineRaw Then
 	MsgBox(16,"ETSIdatViewer ERROR", "ETSIdatViewer debe ser invocado al abrir un archivo.")
 	Exit
-Else
-	;MsgBox(0,"FILE",$cmdLine[1])
 EndIf
+If StringInStr($CmdLineRaw, " ") <> 0 Then $CmdLineRaw = '"'&$CmdLineRaw&'"'
 
 $installPath = @AppDataDir&"\ETSIdatViewer"
 $componentsPath = $installPath&"\components"
@@ -77,7 +76,7 @@ WEnd
 GUIDelete($GUI)
 
 ;Abrir los archivos
-If $selected <> "" Then Run($componentsPath&"\"&$selected &" "& $cmdLine[1])
+If $selected <> "" Then Run($componentsPath&"\"&$selected &" "& $CmdLineRaw)
 
 
 
